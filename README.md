@@ -1,12 +1,27 @@
-# React + Vite
+# React FakeStore Shopping App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple e-commerce frontend built with React, Redux Toolkit & React Router, using [FakeStore API](https://fakestoreapi.com/) for product data. Supports:
 
-Currently, two official plugins are available:
+- **Product listing** (grid of all products)
+- **Product detail pages** (title, description, image, price, category)
+- **Shopping cart** (add/remove items, persists in Redux)
+- **Toasts** (added items confirmation)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📦 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Fetch once**: we pull _all products_ & _all categories_ in one request and then filter on the frontend—no repeated API calls.
+- **Product Slice**: centralized state for products, categories, filteredProducts & loading/error status.
+- **Category page**: dynamic URL (`/categories/:category`) shows only items in that category.
+- **Product page**: dynamic URL (`/products/:productId`) shows full detail from cached Redux data.
+- **Cart Slice**: add-to-cart button dispatches actions; cart state lives in Redux.
+- **React-Toastify** to show “Item Added to Cart” toasts.
+---
+
+## 🛠️ Tech Stack
+
+- **React** (v18+)
+- **Redux Toolkit** (RTK & createAsyncThunk)
+- **Tailwind CSS** (utility-first styling)
+- **FakeStore API** (data source)
